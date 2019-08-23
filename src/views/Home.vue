@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <img alt="leesiguk logo" src="../assets/leesiguk.png">
+        <img alt="leesiguk logo" src="../assets/logo.png">
         <HelloWorld msg="이시국닷컴"/>
     </div>
 </template>
