@@ -1,19 +1,14 @@
 <template>
     <div class="home">
         <img alt="leesiguk logo" src="../assets/logo.png">
-        <HelloWorld msg="이시국닷컴"/>
+        <p>COMING SOON</p>
     </div>
 </template>
 
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
-    import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
 
-    @Component({
-        components: {
-            HelloWorld,
-        },
-    })
+    @Component
     export default class Home extends Vue {
     }
 </script>
@@ -21,6 +16,10 @@
 <style lang="scss">
     img {
         width: 50%;
-        max-width: 400px;
+        max-width: 600px;
+    }
+
+    p {
+        color: rgba(255, 255, 255, .76);
     }
 </style>

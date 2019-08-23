@@ -8,6 +8,8 @@
     html, body {
         width: 100%;
         height: 100%;
+        padding: 0;
+        margin: 0;
     }
 
     #app {
@@ -15,11 +17,11 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
-        color: #2c3e50;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 100%;
+        background-color: #3D3939;
     }
 </style>
