@@ -6,6 +6,7 @@
         >
             <v-toolbar-title class="subtitle-1">좋아요 수</v-toolbar-title>
             <div class="flex-grow-1"></div>
+            <span class="subtitle-2">차이 {{likeGap}}</span>
         </v-app-bar>
         <template v-for="type in ['japan', 'korea']">
             <div class="chart-container" :key="type">
@@ -31,6 +32,10 @@
     })
     export default class MatchCardCurrentLikeChart extends Vue {
         @Prop() data: any;
+
+        get likeGap() {
+            return this.addComma(Math.abs(this.data.japan.like - this.data.korea.like));
+        }
 
         chartStyle(data: any, type: string) {
             const width: any = {
