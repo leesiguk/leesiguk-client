@@ -7,8 +7,7 @@
                 fixed
                 hide-on-scroll
         >
-            <img src="./assets/1x1_logo.png" alt="logo" class="logo">
-            <v-toolbar-title class="font-weight-bold">이시국</v-toolbar-title>
+            <img src="./assets/logo.png" alt="logo" class="logo">
 
             <div class="flex-grow-1"></div>
         </v-app-bar>
@@ -22,7 +21,7 @@
 
 <style scoped lang="scss">
     .logo {
-        width: 40px;
+        width: 140px;
         display: block;
         margin-right: 16px;
     }

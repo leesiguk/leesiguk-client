@@ -4,51 +4,33 @@
                 dense
                 flat
         >
-            <v-toolbar-title>SPA</v-toolbar-title>
-
+            <v-toolbar-title>{{data.category}}</v-toolbar-title>
             <div class="flex-grow-1"></div>
             <v-btn icon>
                 <v-icon class="material-icons-outlined">share</v-icon>
             </v-btn>
         </v-app-bar>
-        <v-img
-                class="white--text"
-                height="200px"
-                src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-        >
-            <v-card-title class="align-end fill-height">Top 10 Australian beaches</v-card-title>
-        </v-img>
-
-        <v-card-text>
-            <span>Number 10</span><br>
-            <span class="text--primary">
-        <span>Whitehaven Beach</span><br>
-        <span>Whitsunday Island, Whitsunday Islands</span>
-      </span>
-        </v-card-text>
+        <v-divider></v-divider>
+        <match-card-main-content :data="data"></match-card-main-content>
+        <v-divider></v-divider>
+        <match-card-current-like-chart :data="data"></match-card-current-like-chart>
 
         <v-card-actions>
-            <v-btn
-                    text
-                    color="orange"
-            >
-                Share
-            </v-btn>
-            <v-btn
-                    text
-                    color="orange"
-            >
-                Explore
-            </v-btn>
+            <v-btn block text>자세히보기</v-btn>
         </v-card-actions>
     </v-card>
 </template>
 
 <script lang="ts">
-    import {Component, Vue} from 'vue-property-decorator';
+    import {Component, Prop, Vue} from 'vue-property-decorator';
+    import MatchCardMainContent from '@/components/home/MatchCardMainContent.vue';
+    import MatchCardCurrentLikeChart from '@/components/home/MatchCardCurrentLikeChart.vue';
 
-    @Component
+    @Component({
+        components: {MatchCardCurrentLikeChart, MatchCardMainContent},
+    })
     export default class MatchCard extends Vue {
+        @Prop() data: any;
     }
 </script>
 
