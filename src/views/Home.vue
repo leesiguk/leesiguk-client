@@ -11,7 +11,7 @@
             >
                 <match-card :data="data"></match-card>
             </v-col>
-            <template v-if="index > 0 && index % 4 === 0">
+            <template v-if="index % 4 === 0">
                 <v-col
                         sm="6"
                         md="6"
@@ -35,7 +35,7 @@
     export default class Home extends Vue {
         items: any = [{
             id: 'a',
-            category: 'SPA',
+            category: 'SPA 브랜드',
             japan: {
                 name: '유니클로',
                 brandImageUrl: '/img/brands/uniqlo.png',
@@ -69,7 +69,7 @@
             },
         }, {
             id: 'c',
-            category: '슈퍼 멀티 스토어',
+            category: '슈즈 멀티 스토어',
             japan: {
                 name: '에이비씨마트',
                 brandImageUrl: '/img/brands/abcmart.jpg',
@@ -88,14 +88,14 @@
             id: 'd',
             category: '시계',
             japan: {
-                name: 'G-CHOCK',
+                name: '지샥',
                 brandImageUrl: '/img/brands/gshock.png',
                 brandColor: '#000000',
                 like: 105874,
                 facebookPageUrl: 'https://www.facebook.com/koreagshock/',
             },
             korea: {
-                name: 'DOLPHIN',
+                name: '돌핀',
                 brandImageUrl: '/img/brands/dolphinwatch.png',
                 brandColor: '#ffffff',
                 like: 29,
@@ -103,7 +103,7 @@
             },
         }, {
             id: 'e',
-            category: '생활용품',
+            category: '생활 용품',
             japan: {
                 name: 'MUJI',
                 brandImageUrl: '/img/brands/muji.jpg',
@@ -117,6 +117,40 @@
                 brandColor: '#58585A',
                 like: 65923,
                 facebookPageUrl: 'https://www.facebook.com/shinsegaejaju',
+            },
+        }, {
+            id: 'f',
+            category: '남성 뷰티',
+            japan: {
+                name: 'ULOS',
+                brandImageUrl: '/img/brands/ulos.jpg',
+                brandColor: '#ffffff',
+                like: 34989,
+                facebookPageUrl: 'https://www.facebook.com/ULOS.KR/',
+            },
+            korea: {
+                name: '브로앤팁스',
+                brandImageUrl: '/img/brands/brontips.jpg',
+                brandColor: '#ffffff',
+                like: 30222,
+                facebookPageUrl: 'https://www.facebook.com/brontips',
+            },
+        }, {
+            id: 'g',
+            category: '맥주',
+            japan: {
+                name: '아사히',
+                brandImageUrl: '/img/brands/asahi.png',
+                brandColor: '#000000',
+                like: 93737,
+                facebookPageUrl: 'https://www.facebook.com/Asahikr/',
+            },
+            korea: {
+                name: '더부스',
+                brandImageUrl: '/img/brands/thebooth.png',
+                brandColor: '#ffffff',
+                like: 18609,
+                facebookPageUrl: 'https://www.facebook.com/theboothbrewing',
             },
         }];
     }
