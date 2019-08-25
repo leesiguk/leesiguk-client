@@ -88,14 +88,14 @@
             id: 'd',
             category: '시계',
             japan: {
-                name: '지샥',
+                name: 'G-SHOCK',
                 brandImageUrl: '/img/brands/gshock.png',
                 brandColor: '#000000',
                 like: 105874,
                 facebookPageUrl: 'https://www.facebook.com/koreagshock/',
             },
             korea: {
-                name: '돌핀',
+                name: 'Dolphin',
                 brandImageUrl: '/img/brands/dolphinwatch.png',
                 brandColor: '#ffffff',
                 like: 29,
