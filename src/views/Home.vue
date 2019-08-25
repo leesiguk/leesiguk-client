@@ -2,24 +2,35 @@
     <v-row
             align="start"
             justify="start">
-        <v-col
-                v-for="data in items"
-                :key="data.id"
-                sm="6"
-                md="6"
-                lg="4"
-        >
-            <match-card :data="data"></match-card>
-        </v-col>
+        <template v-for="(data, index) in items">
+            <v-col
+                    :key="index"
+                    sm="6"
+                    md="6"
+                    lg="4"
+            >
+                <match-card :data="data"></match-card>
+            </v-col>
+            <template v-if="index > 0 && index % 4 === 0">
+                <v-col
+                        sm="6"
+                        md="6"
+                        lg="4"
+                >
+                    <match-card-ads></match-card-ads>
+                </v-col>
+            </template>
+        </template>
     </v-row>
 </template>
 
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
     import MatchCard from '@/components/home/MatchCard.vue';
+    import MatchCardAds from '@/components/home/MatchCardAds.vue';
 
     @Component({
-        components: {MatchCard},
+        components: {MatchCard, MatchCardAds},
     })
     export default class Home extends Vue {
         items: any = [{
