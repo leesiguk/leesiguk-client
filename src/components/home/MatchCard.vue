@@ -57,15 +57,7 @@
         @Prop() data: any;
 
         shareFacebook() {
-            FB.ui({
-                method: 'share_open_graph',
-                action_type: 'og.likes',
-                action_properties: JSON.stringify({
-                    'og:url': 'https://www.leesiguk.com',
-                    'og:title': `${this.data.japan.name} vs ${this.data.korea.name} 과연 승자는?`,
-                    'og:image': 'https://www.leesiguk.com/img/android-chrome-192x192.png',
-                }),
-            });
+            window.open('https://www.facebook.com/sharer/sharer.php?u=https://www.leesiguk.com');
         }
 
         shareKakao() {
