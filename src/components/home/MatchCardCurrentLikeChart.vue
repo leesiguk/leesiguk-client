@@ -7,26 +7,18 @@
             <v-toolbar-title class="subtitle-1">좋아요 수</v-toolbar-title>
             <div class="flex-grow-1"></div>
         </v-app-bar>
-        <div class="chart-container">
-            <div class="brand">
-                <image-box circle :size="40" :src="data.japan.brandImageUrl"></image-box>
-            </div>
-            <div class="chart-wrapper">
-                <div class="chart japan" style="width: 100%;">
-                    <span class="like-text">{{addComma(data.japan.like)}}</span>
+        <template v-for="type in ['japan', 'korea']">
+            <div class="chart-container" :key="type">
+                <div class="brand">
+                    <image-box circle :size="40" :src="data[type].brandImageUrl"></image-box>
+                </div>
+                <div class="chart-wrapper">
+                    <div class="chart" :class="type" :style="chartStyle(data, type)">
+                        <span class="like-text">{{addComma(data[type].like)}}</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="chart-container">
-            <div class="brand">
-                <image-box circle :size="40" :src="data.korea.brandImageUrl"></image-box>
-            </div>
-            <div class="chart-wrapper">
-                <div class="chart korea" style="width: 80%;">
-                    <span class="like-text">{{addComma(data.korea.like)}}</span>
-                </div>
-            </div>
-        </div>
+        </template>
     </div>
 </template>
 
@@ -39,6 +31,25 @@
     })
     export default class MatchCardCurrentLikeChart extends Vue {
         @Prop() data: any;
+
+        chartStyle(data: any, type: string) {
+            const width: any = {
+                japan: '',
+                korea: '',
+            };
+
+            if (data.japan.like > data.korea.like) {
+                width.japan = '100%';
+                width.korea = `${data.korea.like / data.japan.like * 100}%`;
+            } else {
+                width.japan = `${data.japan.like / data.korea.like * 100}%`;
+                width.korea = '100%';
+            }
+
+            return {
+                width: width[type],
+            };
+        }
 
         addComma(num: number): string {
             return num.toLocaleString();
