@@ -5,7 +5,6 @@
                 color="#282D49"
                 dark
                 fixed
-                hide-on-scroll
         >
             <img src="./assets/logo.png" alt="logo" class="logo">
 
