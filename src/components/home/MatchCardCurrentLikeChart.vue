@@ -11,11 +11,19 @@
         <template v-for="type in ['japan', 'korea']">
             <div class="chart-container" :key="type">
                 <div class="brand">
-                    <image-box circle :size="40" :src="data[type].brandImageUrl"></image-box>
+                    <image-box
+                            circle :size="40"
+                            :src="data[type].brandImageUrl"
+                            :backgroundColor="data[type].brandColor"
+                    ></image-box>
                 </div>
                 <div class="chart-wrapper">
-                    <div class="chart" :class="type" :style="chartStyle(data, type)">
-                        <span class="like-text">{{addComma(data[type].like)}}</span>
+                    <div
+                            class="chart"
+                            :class="type"
+                            :style="chartStyle(data, type)"
+                    >
+                        <span class="like-text text-no-wrap">{{addComma(data[type].like)}}</span>
                     </div>
                 </div>
             </div>
@@ -75,15 +83,16 @@
 
             .chart-wrapper {
                 flex: 1 0 auto;
-                padding-right: 16px;
+                margin-right: 16px;
+                background-color: #dddddd;
+                border-radius: 4px;
+                overflow: hidden;
 
                 .chart {
                     width: 80%;
                     height: 40px;
                     line-height: 40px;
                     text-align: right;
-                    padding-right: 12px;
-                    border-radius: 4px;
 
                     &.japan {
                         background: linear-gradient(to right, #F89999, #FF3838);
@@ -97,6 +106,7 @@
                         color: #ffffff;
                         font-size: 14px;
                         font-weight: 500;
+                        margin: 0 12px;
                     }
                 }
             }
