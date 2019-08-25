@@ -1,25 +1,29 @@
 <template>
-    <div class="home">
-        <img alt="leesiguk logo" src="../assets/logo.png">
-        <p>COMING SOON</p>
-    </div>
+    <v-row
+            align="start"
+            justify="start">
+        <v-col
+                v-for="n in 10"
+                :key="n"
+                sm="6"
+                md="6"
+                lg="4"
+        >
+            <match-card></match-card>
+        </v-col>
+    </v-row>
 </template>
 
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
+    import MatchCard from '@/components/home/MatchCard.vue';
 
-    @Component
+    @Component({
+        components: {MatchCard},
+    })
     export default class Home extends Vue {
     }
 </script>
 
-<style lang="scss">
-    img {
-        width: 50%;
-        max-width: 600px;
-    }
-
-    p {
-        color: rgba(255, 255, 255, .76);
-    }
+<style scoped lang="scss">
 </style>
