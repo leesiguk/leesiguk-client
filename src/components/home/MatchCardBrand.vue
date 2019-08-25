@@ -1,7 +1,7 @@
 <template>
     <div class="match-card-brand">
         <div class="image-wrapper">
-            <image-box circle :size="80" :src="data.brandImageUrl" :backgroundColor="data.backgroundColor"></image-box>
+            <image-box circle :size="80" :src="data.brandImageUrl" :backgroundColor="data.brandColor"></image-box>
             <img :src="flagUrl" alt="national flag" class="national-flag">
         </div>
         <div class="name">{{data.name}}</div>
