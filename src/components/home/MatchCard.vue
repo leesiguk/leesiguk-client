@@ -61,9 +61,9 @@
                 method: 'share_open_graph',
                 action_type: 'og.likes',
                 action_properties: JSON.stringify({
-                    object: 'https://www.leesiguk.com',
-                    title: `${this.data.japan.name} vs ${this.data.korea.name} 과연 승자는?`,
-                    image: 'https://www.leesiguk.com/img/android-chrome-192x192.png',
+                    'og:url': 'https://www.leesiguk.com',
+                    'og:title': `${this.data.japan.name} vs ${this.data.korea.name} 과연 승자는?`,
+                    'og:image': 'https://www.leesiguk.com/img/android-chrome-192x192.png',
                 }),
             });
         }
