@@ -1,7 +1,18 @@
 <template>
     <div class="match-card-brand">
         <div class="image-wrapper">
-            <image-box circle :size="80" :src="data.brandImageUrl" :backgroundColor="data.brandColor"></image-box>
+            <a
+                    :href="data.facebookPageUrl"
+                    target="_blank"
+            >
+                <image-box
+                        circle
+                        :size="80"
+                        :src="data.brandImageUrl"
+                        :backgroundColor="data.brandColor"
+                        @click="openPage()"
+                ></image-box>
+            </a>
             <img :src="flagUrl" alt="national flag" class="national-flag">
         </div>
         <div class="name">{{data.name}}</div>
