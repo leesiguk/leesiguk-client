@@ -1,9 +1,12 @@
 <template>
     <v-card>
         <div class="ads-wrapper">
+            <!--            <a href="https://coupa.ng/biBKO6" target="_blank"><img-->
+            <!--                    src="https://ads-partners.coupang.com/banners/15159?subId=&traceId=19082520191687403001006442&w=600&h=900"-->
+            <!--                    alt=""></a>-->
             <a href="https://coupa.ng/biBKO6" target="_blank"><img
-                    src="https://ads-partners.coupang.com/banners/15159?subId=&traceId=19082520191687403001006442&w=600&h=900"
-                    alt=""></a>
+                    src="https://image13.coupangcdn.com/image/affiliate/widget/banner/2019/08/07/f64c96edb2fd003601894e6f08d66078.jpeg"
+                    alt="coupang banner"></a>
         </div>
     </v-card>
 </template>
