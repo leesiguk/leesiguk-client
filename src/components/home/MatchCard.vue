@@ -66,7 +66,7 @@
                 content: {
                     title: `${this.data.japan.name} vs ${this.data.korea.name}`,
                     description: '과연 승자는?',
-                    imageUrl: 'https://www.leesiguk.com/img/icons/leesiguk-main-logo.png',
+                    imageUrl: 'https://www.leesiguk.com/img/icons/social-810x810.png',
                     link: {
                         mobileWebUrl: 'https://www.leesiguk.com',
                         webUrl: 'https://www.leesiguk.com',
