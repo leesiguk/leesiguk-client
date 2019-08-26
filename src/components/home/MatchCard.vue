@@ -70,7 +70,7 @@
                     link: {
                         mobileWebUrl: 'https://www.leesiguk.com',
                         webUrl: 'https://www.leesiguk.com',
-                    }
+                    },
                 },
                 buttons: [
                     {
