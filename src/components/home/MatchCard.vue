@@ -64,7 +64,7 @@
             Kakao.Link.sendDefault({
                 objectType: 'feed',
                 content: {
-                    title: '${this.data.japan.name} vs ${this.data.korea.name}',
+                    title: `${this.data.japan.name} vs ${this.data.korea.name}`,
                     description: '과연 승자는?',
                     imageUrl: 'https://www.leesiguk.com/img/leesiguk-main-logo.png',
                     link: {
