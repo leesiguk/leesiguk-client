@@ -5,6 +5,7 @@
                 color="#282D49"
                 dark
                 fixed
+                elevate-on-scroll
         >
             <img src="./assets/logo.png" alt="logo" class="logo">
 
