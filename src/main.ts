@@ -4,6 +4,16 @@ import router from './router';
 import store from './store';
 import './registerServiceWorker';
 import vuetify from './plugins/vuetify';
+// @ts-ignore
+import VueAnalytics from 'vue-analytics';
+
+Vue.use(VueAnalytics, {
+    id: 'UA-146336888-1',
+    router,
+    autoTracking: {
+        pageviewOnLoad: true,
+    },
+});
 
 Vue.config.productionTip = false;
 
