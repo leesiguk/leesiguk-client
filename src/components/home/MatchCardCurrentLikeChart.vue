@@ -21,9 +21,12 @@
                     <div
                             class="chart"
                             :class="type"
-                            :style="chartStyle(data, type)"
+                            :style="width[type]"
                     >
-                        <span class="like-text text-no-wrap">{{addComma(data[type].like)}}</span>
+                        <span
+                                class="like-text text-no-wrap"
+                                :class="{show: showLikeCount}"
+                        >{{addComma(data[type].like)}}</span>
                     </div>
                 </div>
             </div>
@@ -41,21 +44,38 @@
     export default class MatchCardCurrentLikeChart extends Vue {
         @Prop() data: any;
 
+        width: any = {
+            japan: 0,
+            korea: 0,
+        };
+        showLikeCount: boolean = false;
+
         get likeGap() {
             return this.addComma(Math.abs(this.data.japan.like - this.data.korea.like));
         }
 
-        chartStyle(data: any, type: string) {
+        created() {
+            setTimeout(() => {
+                this.width.japan = this.chartStyle('japan');
+                this.width.korea = this.chartStyle('korea');
+
+                setTimeout(() => {
+                    this.showLikeCount = true;
+                }, 1000);
+            }, 600);
+        }
+
+        chartStyle(type: string) {
             const width: any = {
                 japan: '',
                 korea: '',
             };
 
-            if (data.japan.like > data.korea.like) {
+            if (this.data.japan.like > this.data.korea.like) {
                 width.japan = '100%';
-                width.korea = `${data.korea.like / data.japan.like * 100}%`;
+                width.korea = `${this.data.korea.like / this.data.japan.like * 100}%`;
             } else {
-                width.japan = `${data.japan.like / data.korea.like * 100}%`;
+                width.japan = `${this.data.japan.like / this.data.korea.like * 100}%`;
                 width.korea = '100%';
             }
 
@@ -87,12 +107,18 @@
                 background-color: #dddddd;
                 border-radius: 4px;
                 overflow: hidden;
+                position: relative;
 
                 .chart {
-                    width: 80%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
                     height: 40px;
                     line-height: 40px;
                     text-align: right;
+                    will-change: width;
+                    transition: width 1s;
 
                     &.japan {
                         background: linear-gradient(to right, #F89999, #FF3838);
@@ -107,6 +133,12 @@
                         font-size: 14px;
                         font-weight: 500;
                         margin: 0 12px;
+                        opacity: 0;
+                        transition: all .3s;
+
+                        &.show {
+                            opacity: 1;
+                        }
                     }
                 }
             }
