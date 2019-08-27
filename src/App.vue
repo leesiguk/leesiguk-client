@@ -7,9 +7,14 @@
                 fixed
                 elevate-on-scroll
         >
-            <img src="./assets/logo.png" alt="logo" class="logo">
+            <router-link to="/">
+                <img src="./assets/logo.png" alt="logo" class="logo">
+            </router-link>
 
             <div class="flex-grow-1"></div>
+            <v-btn icon to="/about">
+                <v-icon>favorite</v-icon>
+            </v-btn>
         </v-app-bar>
         <v-content>
             <v-container fluid class="container">
@@ -21,7 +26,7 @@
 
 <style scoped lang="scss">
     .logo {
-        width: 140px;
+        width: 160px;
         display: block;
         margin-right: 16px;
     }
