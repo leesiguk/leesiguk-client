@@ -11,15 +11,6 @@
             >
                 <match-card :data="data"></match-card>
             </v-col>
-            <template v-if="index % 4 === 0">
-                <v-col
-                        sm="6"
-                        md="6"
-                        lg="4"
-                >
-                    <match-card-ads></match-card-ads>
-                </v-col>
-            </template>
         </template>
     </v-row>
 </template>
