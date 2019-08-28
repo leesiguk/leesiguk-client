@@ -35,10 +35,6 @@
         <match-card-main-content :data="data"></match-card-main-content>
         <v-divider></v-divider>
         <match-card-current-like-chart :data="data"></match-card-current-like-chart>
-
-        <v-card-actions>
-            <v-btn block text>자세히보기</v-btn>
-        </v-card-actions>
     </v-card>
 </template>
 
