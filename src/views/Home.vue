@@ -44,6 +44,8 @@
     import db from '@/lib/firebase';
     import MatchCardSkeleton from '@/components/home/MatchCardSkeleton.vue';
 
+    declare const FB: any;
+
     @Component({
         components: {MatchCardSkeleton, MatchCard, MatchCardAds},
     })
@@ -59,6 +61,15 @@
             db.ref('/').once('value').then((snapshot: any) => {
                 this.isLoading = false;
                 this.items = snapshot.val();
+                this.initFB();
+            });
+        }
+
+        initFB() {
+            FB.init({
+                appId: '378770669689001',
+                xfbml: true,
+                version: 'v4.0',
             });
         }
     }
