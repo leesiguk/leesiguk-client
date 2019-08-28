@@ -21,13 +21,13 @@
     .ads-wrapper {
         min-width: 200px;
         width: 100%;
-        height: 521px;
+        height: 469px;
         overflow: hidden;
 
         a {
             img {
                 width: 100%;
-                height: 521px;
+                height: 469px;
             }
         }
     }
