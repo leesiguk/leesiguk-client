@@ -48,6 +48,15 @@
 
     @Component({
         components: {MatchCardSkeleton, MatchCard, MatchCardAds},
+        metaInfo: {
+            title: '이시국닷컴',
+            meta: [
+                {name: 'description', content: '이시국엔 이시국닷컴! 이시국닷컴에서 다양한 한일 브랜드의 트랜드를 비교 해보세요.'},
+                {name: 'og:description', content: '이시국엔 이시국닷컴! 이시국닷컴에서 다양한 한일 브랜드의 트랜드를 비교 해보세요.'},
+                {name: 'og:title', content: '이시국닷컴'},
+                {name: 'og:url', content: 'https://www.leesiguk.com'},
+            ],
+        },
     })
     export default class Home extends Vue {
         isLoading: boolean = true;

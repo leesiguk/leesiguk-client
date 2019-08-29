@@ -31,7 +31,17 @@
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
 
-    @Component
+    @Component({
+        metaInfo: {
+            title: '이시국닷컴 - About',
+            meta: [
+                {name: 'description', content: '이시국닷컴 - About'},
+                {name: 'og:description', content: '이시국닷컴 - About'},
+                {name: 'og:title', content: '이시국닷컴 - About'},
+                {name: 'og:url', content: 'https://www.leesiguk.com/about'},
+            ],
+        },
+    })
     export default class About extends Vue {
     }
 </script>
