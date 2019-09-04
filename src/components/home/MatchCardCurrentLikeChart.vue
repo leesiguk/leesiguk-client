@@ -1,36 +1,29 @@
 <template>
-    <div class="match-card-current-like-chart">
-        <v-app-bar
-                dense
-                flat
-        >
-            <v-toolbar-title class="subtitle-1">좋아요 수</v-toolbar-title>
-            <div class="flex-grow-1"></div>
-            <span class="subtitle-2">차이 {{likeGap}}</span>
-        </v-app-bar>
-        <template v-for="type in ['japan', 'korea']">
-            <div class="chart-container" :key="type">
-                <div class="brand">
-                    <image-box
-                            circle :size="40"
-                            :src="data[type].brandImageUrl"
-                            :backgroundColor="data[type].brandColor"
-                    ></image-box>
-                </div>
-                <div class="chart-wrapper">
-                    <div
-                            class="chart"
-                            :class="type"
-                            :style="width[type]"
-                    >
+    <div
+            class="match-card-current-like-chart"
+            :class="type"
+    >
+        <div class="chart-container">
+            <div class="brand">
+                <image-box
+                        circle :size="40"
+                        :src="data[type].brandImageUrl"
+                        :backgroundColor="data[type].brandColor"
+                ></image-box>
+            </div>
+            <div class="chart-wrapper">
+                <div
+                        class="chart"
+                        :class="type"
+                        :style="width[type]"
+                >
                         <span
                                 class="like-text text-no-wrap"
                                 :class="{show: showLikeCount}"
                         >{{addComma(data[type].like)}}</span>
-                    </div>
                 </div>
             </div>
-        </template>
+        </div>
     </div>
 </template>
 
@@ -42,6 +35,7 @@
         components: {ImageBox},
     })
     export default class MatchCardCurrentLikeChart extends Vue {
+        @Prop() type!: string;
         @Prop() data: any;
 
         width: any = {
@@ -62,7 +56,7 @@
                 setTimeout(() => {
                     this.showLikeCount = true;
                 }, 1000);
-            }, 600);
+            }, 0);
         }
 
         chartStyle(type: string) {
@@ -92,10 +86,14 @@
 
 <style scoped lang="scss">
     .match-card-current-like-chart {
+        &.korea {
+            padding-top: 16px;
+        }
+
         .chart-container {
             display: flex;
             flex-direction: row;
-            padding-bottom: 16px;
+            padding-bottom: 8px;
 
             .brand {
                 padding: 0 16px;
@@ -134,7 +132,7 @@
                         font-weight: 500;
                         margin: 0 12px;
                         opacity: 0;
-                        transition: all .3s;
+                        transition: opacity .3s;
 
                         &.show {
                             opacity: 1;

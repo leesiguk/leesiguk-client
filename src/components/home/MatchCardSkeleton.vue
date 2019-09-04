@@ -4,13 +4,19 @@
         <div class="share"></div>
         <div class="content"></div>
         <div class="like-text"></div>
-        <div class="chart-wrapper">
+        <div class="bar-chart-wrapper">
             <div class="circle"></div>
             <div class="chart"></div>
         </div>
-        <div class="chart-wrapper">
+        <div class="trend-chart-wrapper">
+            <div class="trend-chart"></div>
+        </div>
+        <div class="bar-chart-wrapper">
             <div class="circle"></div>
             <div class="chart"></div>
+        </div>
+        <div class="trend-chart-wrapper">
+            <div class="trend-chart"></div>
         </div>
     </v-card>
 </template>
@@ -28,7 +34,7 @@
     .match-card-skeleton {
         min-width: 200px;
         width: 100%;
-        height: 469px;
+        height: 550px;
         padding: 16px;
 
         .header {
@@ -67,10 +73,11 @@
             animation: skeleton-screen-pulse 2s infinite ease-in-out;
         }
 
-        .chart-wrapper {
+        .bar-chart-wrapper {
             display: flex;
             flex-direction: row;
             padding-top: 16px;
+            padding-bottom: 8px;
 
             .circle {
                 border-radius: 50%;
@@ -88,6 +95,10 @@
                 user-select: none;
                 animation: skeleton-screen-pulse 2s infinite ease-in-out;
             }
+        }
+
+        .trend-chart-wrapper {
+            height: 40px;
         }
 
         @keyframes skeleton-screen-pulse {
