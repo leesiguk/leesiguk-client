@@ -22,6 +22,12 @@ import VueMeta from 'vue-meta';
 
 Vue.use(VueMeta);
 
+import VueApexCharts from 'vue-apexcharts';
+
+Vue.use(VueApexCharts);
+
+Vue.component('apexchart', VueApexCharts);
+
 Vue.config.productionTip = false;
 
 new Vue({

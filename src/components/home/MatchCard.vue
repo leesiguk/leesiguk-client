@@ -34,20 +34,22 @@
         <v-divider></v-divider>
         <match-card-main-content :data="data"></match-card-main-content>
         <v-divider></v-divider>
-        <match-card-current-like-chart :data="data"></match-card-current-like-chart>
+        <match-card-like-chart-container :data="data"></match-card-like-chart-container>
     </v-card>
 </template>
 
 <script lang="ts">
     import {Component, Prop, Vue} from 'vue-property-decorator';
     import MatchCardMainContent from '@/components/home/MatchCardMainContent.vue';
-    import MatchCardCurrentLikeChart from '@/components/home/MatchCardCurrentLikeChart.vue';
+    import MatchCardLikeChartContainer from '@/components/home/MatchCardLikeChartContainer.vue';
 
     declare const Kakao: any;
-    declare const FB: any;
 
     @Component({
-        components: {MatchCardCurrentLikeChart, MatchCardMainContent},
+        components: {
+            MatchCardLikeChartContainer,
+            MatchCardMainContent,
+        },
     })
     export default class MatchCard extends Vue {
         @Prop() data: any;
