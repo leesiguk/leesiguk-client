@@ -6,7 +6,6 @@
                     target="_blank"
             >
                 <image-box
-                        circle
                         :size="80"
                         :src="data.brandImageUrl"
                         :backgroundColor="data.brandColor"

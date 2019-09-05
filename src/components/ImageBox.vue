@@ -1,5 +1,5 @@
 <template>
-    <div class="image-box" :style="style" :class="[{'is-circle': circle}]" @click="$emit('click')">
+    <div class="image-box" :style="style" @click="$emit('click')">
         <template v-if="src">
             <v-img contain
                    :src="src"
@@ -28,7 +28,6 @@
         @Prop() src!: string | null;
         @Prop({default: '#ffffff'}) backgroundColor!: string;
         @Prop({default: 80}) size!: number;
-        @Prop(Boolean) circle!: boolean;
 
         get style() {
             return {
@@ -50,13 +49,9 @@
 
 <style scoped lang="scss">
     .image-box {
-        border-radius: 8px;
         overflow: hidden;
         border: 1px solid #ededed;
-
-        &.is-circle {
-            border-radius: 50% !important;
-        }
+        border-radius: 50%;
     }
 </style>
 

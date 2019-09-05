@@ -6,7 +6,7 @@
         <div class="chart-container">
             <div class="brand">
                 <image-box
-                        circle :size="40"
+                        :size="40"
                         :src="data[type].brandImageUrl"
                         :backgroundColor="data[type].brandColor"
                 ></image-box>
