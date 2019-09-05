@@ -18,7 +18,9 @@
         </v-app-bar>
         <v-content>
             <v-container fluid class="container">
-                <router-view></router-view>
+                <keep-alive>
+                    <router-view></router-view>
+                </keep-alive>
             </v-container>
         </v-content>
     </v-app>
