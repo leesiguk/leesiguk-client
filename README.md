@@ -12,4 +12,5 @@ Following items are core frontend technologies used in this project:
 - Vuetify
 - PWA
 - Firebase
-- vue-meta
+- Vue META
+- APEXCHARTS.JS
